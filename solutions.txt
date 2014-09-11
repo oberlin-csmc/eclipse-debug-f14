@@ -33,3 +33,6 @@ Because I'm lazy I won't provided solutions in code, I'll just describe them.
     The format string is "%3o" instead of "%3d". That prints the octal
     representation of the number, not the decimal representation. I suppose this
     isn't really a correctness bug, but it's not what we usually expect to see.
+
+3.3:
+  You can find it.
