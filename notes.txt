@@ -1,0 +1,45 @@
+Some notes on the Eclipse Debugger
+  By Dan Barella
+
+Probably the most useful setting change for debugging is something called the
+'step filter'. This controls how far down the rabbit hole the debugger will go
+-- without it you'll find that stepping in too far will land you in the java
+source code, which is probably not where you want to be. Unless you're looking
+for bugs in the java source, in which ignore this.
+
+This can be done in Eclipse's preferences. In my version (Juno) it's under
+  Java => Debug => Step Filtering
+Check the box which says 'Use Step Filters' and then check the 'java.*' filter.
+
+Aside from that, the only important things to remember about the debugger are
+the movement commands:
+  - Resume (The green 'Play button' next to Pause and Stop):
+    This will resume execution and stop an the next breakpoint, wherever that
+    is.
+  - Step Into: Recurse into the line you're sitting at right now.
+      For example,
+        1: int a = computeStuff(); //You are here
+        2: int b = computeOtherStuff();
+        If you are on line 1 and hit 'step into', you will be taken into
+        the method computeStuff().
+  - Step Over: Execute the current line and move to the next line at this level
+      For example:
+        1: int a = computeStuff(); //You are here
+        2: int b = computeOtherStuff();
+      If you are on line 1 and hit 'step over', line 1 will be executed and
+      the debugger will move to line 2.
+  - Step Return: Execute the rest of this method and return to where it was
+    called.
+      For example:
+        1: public static int computeStuff() {
+        2:   int a = 1; //You are here
+        3:   int b = 1;
+        4:   return a+b;
+        5: }
+        X: int b = computeStuff(); //In caller
+      If you are on line 2 and hit 'step return', the rest of the function will
+      be executed and you will be moved back to where computeStuff was called,
+      in this case back to line X.
+
+Remember to hit 'Stop' on a debugging session that you're done with, because
+otherwise it's just going to keep running forever and eat up your RAM.
