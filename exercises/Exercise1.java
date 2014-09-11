@@ -1,3 +1,5 @@
+package exercises;
+
 /**
  * Debugging exercise 1
  * @author dbarella@oberlin.edu (Dan Barella)
