@@ -1,0 +1,35 @@
+By Dan Barella
+
+Because I'm lazy I won't provided solutions in code, I'll just describe them.
+  (Sorry)
+
+1.1:
+  The loop is going from 0 up to array.length _inclusive_. But, there is no
+  element at array[array.length], so we get an exception.
+
+  Fix: Change <= to <
+
+2.1:
+  Correcness Bugs:
+    More off-by-one errors -- i and j go up to max but don't include it.
+
+2.2:
+  Crashing Bug:
+    i=i++ does not actually increment i. If you're interested in why, I'll provide an
+    explanation -- but the gist is you should be careful about using 'i++' any
+    more than by itself. Options you can use:
+      i++;
+      i += 1;
+      i = i+1;
+
+    Why i = i++ doesn't work:
+      i++ is a post-increment. This means that java returns the current value,
+      and then increments i. So, when you say
+        i = i++;
+      you're setting i to its own value, and the increment never happens.
+      This is completely non-obvious, and it's all Java's fault. )':
+
+  Correctness Bug:
+    The format string is "%3o" instead of "%3d". That prints the octal
+    representation of the number, not the decimal representation. I suppose this
+    isn't really a correctness bug, but it's not what we usually expect to see.
