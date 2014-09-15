@@ -22,7 +22,7 @@ public class Exercise3 {
     }
     
     /**
-     * Multiply two numbers.
+     * Return the sum of the integers from 1 to n.
      */
     public static int sumOfIntegers(int n) {
 	return n*add1(n)/2;

@@ -21,7 +21,7 @@ package exercises;
 public class Exercise2 {
 
     /**
-     * Exercise 2.1 - Prints the multiplication table from 1 to max.
+     * Exercise 2.1 - Prints the multiplication table from 1 to max, inclusive.
      * Just correctness bugs here.
      * @param max The max number to print.
      */
@@ -36,7 +36,7 @@ public class Exercise2 {
     }
 
     /**
-     * Exercise 2.2 - Prints the multiplication table from 1 to max.
+     * Exercise 2.2 - Prints the multiplication table from 1 to max, inclusive.
      * 
      * This function is similar to @printMultiplicationTable1, but
      * with some subtler bugs -- one crashing and one correctness.
@@ -46,7 +46,7 @@ public class Exercise2 {
      */
     public static void printMultiplicationTable2(int max) {
 	int floor = 1;
-	for(int i=floor; i<max; i=i++) {
+	for(int i=floor; i<max; i++) {
 	    for(int j=floor; j<max; j++) {
 		System.out.printf("%3o ", i*j);
 	    }
@@ -59,8 +59,8 @@ public class Exercise2 {
 	printMultiplicationTable1(12);
 	
 	// Uncomment these lines for an extra challenge
-	//System.out.println("========== Exercise 2.2 ==========");
-	//printMultiplicationTable2(12);
+//	System.out.println("========== Exercise 2.2 ==========");
+//	printMultiplicationTable2(12);
     }
 
 }
