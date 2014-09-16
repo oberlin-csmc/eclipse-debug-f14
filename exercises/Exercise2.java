@@ -46,7 +46,7 @@ public class Exercise2 {
      */
     public static void printMultiplicationTable2(int max) {
 	int floor = 1;
-	for(int i=floor; i<max; i++) {
+	for(int i=floor; i<max; i=i++) {
 	    for(int j=floor; j<max; j++) {
 		System.out.printf("%3o ", i*j);
 	    }
